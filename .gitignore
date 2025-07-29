@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### build 폴더 ###
+.gradle/
+.idea/
