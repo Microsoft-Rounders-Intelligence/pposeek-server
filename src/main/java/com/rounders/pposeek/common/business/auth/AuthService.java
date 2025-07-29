@@ -21,7 +21,7 @@ import java.util.UUID;
 /**
  * 인증 업무를 처리하는 비즈니스 서비스.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote
@@ -36,7 +36,7 @@ public class AuthService {
     /**
      * 사용자 로그인.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param loginDto 로그인 정보
@@ -74,7 +74,7 @@ public class AuthService {
     /**
      * 사용자 회원가입.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param registerDto 회원가입 정보
@@ -114,7 +114,7 @@ public class AuthService {
     /**
      * 현재 사용자 정보 조회.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param token JWT 토큰
@@ -136,7 +136,7 @@ public class AuthService {
     /**
      * 사용자명 중복 체크.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param username 사용자명

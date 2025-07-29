@@ -15,7 +15,7 @@ import jakarta.validation.constraints.NotBlank;
 /**
  * 로그인 요청 DTO 클래스.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote

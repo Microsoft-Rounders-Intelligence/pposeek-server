@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * 토큰 정보 DTO
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  */
 @Data

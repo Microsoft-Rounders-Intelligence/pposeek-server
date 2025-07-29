@@ -27,7 +27,7 @@ import java.util.Arrays;
 /**
  * Spring Security 설정 클래스.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote

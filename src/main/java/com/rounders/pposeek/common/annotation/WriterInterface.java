@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * Writer 전용 매퍼 어노테이션
  * 쓰기 전용 데이터소스에 연결되는 매퍼에 사용
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  */
 @Target(ElementType.TYPE)

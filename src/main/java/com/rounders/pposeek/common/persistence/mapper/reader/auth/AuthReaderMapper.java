@@ -12,7 +12,7 @@ import com.rounders.pposeek.common.model.dto.user.UserDto;
 /**
  * 인증 Reader 업무를 처리하는 데이터베이스 Mapper.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote
@@ -24,7 +24,7 @@ public interface AuthReaderMapper {
     /**
      * 로그인용 사용자 정보 조회 (사용자명 또는 이메일로).
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param loginId 사용자명 또는 이메일
@@ -35,7 +35,7 @@ public interface AuthReaderMapper {
     /**
      * 사용자명 존재 여부 확인.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param username 사용자명
@@ -46,7 +46,7 @@ public interface AuthReaderMapper {
     /**
      * 이메일 존재 여부 확인.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param email 이메일
@@ -57,7 +57,7 @@ public interface AuthReaderMapper {
     /**
      * 사용자 ID로 사용자 정보 조회.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param userId 사용자 ID

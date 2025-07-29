@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 /**
  * 공통 응답 메시지 DTO
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  */
 @Data

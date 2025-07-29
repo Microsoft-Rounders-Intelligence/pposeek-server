@@ -20,7 +20,7 @@ import com.rounders.pposeek.common.persistence.mapper.writer.auth.AuthWriterMapp
 /**
  * 인증 업무를 처리하는 데이터베이스 Adapter.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote
@@ -43,7 +43,7 @@ public class AuthPersistenceAdapter {
     /**
      * 로그인용 사용자 정보 조회.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param loginId 사용자명 또는 이메일
@@ -56,7 +56,7 @@ public class AuthPersistenceAdapter {
     /**
      * 사용자명 중복 확인.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param username 사용자명
@@ -69,7 +69,7 @@ public class AuthPersistenceAdapter {
     /**
      * 이메일 중복 확인.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param email 이메일
@@ -82,7 +82,7 @@ public class AuthPersistenceAdapter {
     /**
      * 사용자 ID로 사용자 정보 조회.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param userId 사용자 ID
@@ -95,7 +95,7 @@ public class AuthPersistenceAdapter {
     /**
      * 사용자 등록.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param userDto 사용자 정보
@@ -116,7 +116,7 @@ public class AuthPersistenceAdapter {
     /**
      * 사용자 정보 수정.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param userDto 사용자 정보
@@ -135,7 +135,7 @@ public class AuthPersistenceAdapter {
     /**
      * 사용자 세션 생성.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param userId 사용자 ID
@@ -157,7 +157,7 @@ public class AuthPersistenceAdapter {
     /**
      * 세션 활동 업데이트.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param sessionToken 세션 토큰

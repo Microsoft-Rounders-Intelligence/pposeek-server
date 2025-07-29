@@ -30,7 +30,7 @@ import com.rounders.pposeek.common.model.dto.user.UserDto;
 /**
  * 인증 관련 Rest API 처리 컨트롤러.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote

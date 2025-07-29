@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 /**
  * 사용자 정보 DTO 클래스.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote

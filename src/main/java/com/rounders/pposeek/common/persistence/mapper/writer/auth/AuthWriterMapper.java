@@ -13,7 +13,7 @@ import com.rounders.pposeek.common.model.domain.session.UserSessionD;
 /**
  * 인증 Writer 업무를 처리하는 데이터베이스 Mapper.
  * 
- * @author siunkimm@naver.com
+ * @author siunkimm@gmail.com
  * @since 2025
  * 
  * @apiNote
@@ -25,7 +25,7 @@ public interface AuthWriterMapper {
     /**
      * 사용자 등록.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param userD 사용자 도메인
@@ -36,7 +36,7 @@ public interface AuthWriterMapper {
     /**
      * 사용자 정보 수정.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param userD 사용자 도메인
@@ -47,7 +47,7 @@ public interface AuthWriterMapper {
     /**
      * 사용자 세션 생성.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param sessionD 세션 도메인
@@ -58,7 +58,7 @@ public interface AuthWriterMapper {
     /**
      * 사용자 세션 활동 업데이트.
      * 
-     * @author siunkimm@naver.com
+     * @author siunkimm@gmail.com
      * @since 2025
      * 
      * @param sessionToken 세션 토큰
