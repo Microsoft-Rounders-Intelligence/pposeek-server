@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PposeekJobbotApplication {
+public class PposeekApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PposeekJobbotApplication.class, args);
+		SpringApplication.run(PposeekApplication.class, args);
 	}
 
 }
