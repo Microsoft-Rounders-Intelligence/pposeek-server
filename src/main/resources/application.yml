@@ -2,9 +2,54 @@ spring:
   application:
     name: pposeek
   
+  # 데이터소스 설정
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    
+  # H2 콘솔 설정
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      
+  # JPA 설정
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        
+  # SQL 초기화 설정
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+
+# MyBatis 설정
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
+  type-aliases-package: com.rounders.pposeek.common.model
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+    
 server:
   port: 8080
+
+# JWT 설정
+jwt:
+  secret: mySecretKey
+  expiration: 86400000 # 24시간 (밀리초)
 
 logging:
   level:
     com.rounders.pposeek: DEBUG
+    org.springframework.security: DEBUG
+    org.mybatis: DEBUG
