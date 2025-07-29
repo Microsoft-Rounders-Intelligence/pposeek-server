@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import lombok.RequiredArgsConstructor;
 
-import com.rounders.pposeek.common.model.dto.auth.LoginDto;
 import com.rounders.pposeek.common.model.dto.user.UserDto;
 import com.rounders.pposeek.common.model.domain.user.UserD;
 import com.rounders.pposeek.common.model.domain.session.UserSessionD;

@@ -17,7 +17,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -70,28 +69,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            // CSRF 비활성화 (REST API 사용)
+            // 개발 환경용 - 모든 보안 비활성화
             .csrf(csrf -> csrf.disable())
-            
-            // CORS 설정
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-            
-            // 세션 관리 - JWT 사용하므로 STATELESS
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            
-            // 경로별 접근 권한 설정
+            .cors(cors -> cors.disable())
             .authorizeHttpRequests(authz -> authz
-                // 인증 없이 접근 가능한 경로
-                .requestMatchers("/api/auth/login", "/api/auth/register", "/api/auth/check-username").permitAll()
-                .requestMatchers("/h2-console/**").permitAll()
-                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                .requestMatchers("/actuator/health").permitAll()
-                // 나머지는 인증 필요
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()  // 모든 요청 허용
             )
-            
-            // H2 콘솔 사용을 위한 설정
-            .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()));
+            .headers(headers -> headers.frameOptions().disable());
 
         return http.build();
     }
