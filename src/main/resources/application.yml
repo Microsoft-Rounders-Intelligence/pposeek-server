@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: pposeek
+  
+server:
+  port: 8080
+
+logging:
+  level:
+    com.rounders.pposeek: DEBUG
