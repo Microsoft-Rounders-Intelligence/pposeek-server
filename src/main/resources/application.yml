@@ -1,55 +1,180 @@
+#########################################################################
+# 
+# PPoseek Web Application - Spring Boot Configuration
+# 
+# Copyright(c) 2025 ROUNDERS. All rights reserved.
+# This software is the proprietary information of ROUNDERS.
+# 
+#########################################################################
+
+# ==============================================================================
+# Spring Boot Core Configuration
+# ==============================================================================
 spring:
   application:
-    name: pposeek
+    name: pposeek                                      # 애플리케이션 이름
   
-  # 데이터소스 설정
+  # ------------------------------------------------------------------------------
+  # 프로파일 설정
+  # ------------------------------------------------------------------------------
+  profiles:
+    active: dev                                        # 기본 활성 프로파일 (dev, prod, test)
+  
+  # ------------------------------------------------------------------------------
+  # 데이터소스 설정 (H2 In-Memory Database)
+  # ------------------------------------------------------------------------------
   datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: password
+    url: jdbc:h2:mem:testdb                            # H2 메모리 데이터베이스 URL
+    driver-class-name: org.h2.Driver                   # H2 JDBC 드라이버
+    username: sa                                       # 데이터베이스 사용자명
+    password: password                                 # 데이터베이스 비밀번호
     
-  # H2 콘솔 설정
+  # ------------------------------------------------------------------------------
+  # H2 Database Console 설정 (개발용)
+  # ------------------------------------------------------------------------------
   h2:
     console:
-      enabled: true
-      path: /h2-console
-      
-  # JPA 설정
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+      enabled: true                                    # H2 웹 콘솔 활성화
+      path: /h2-console                                # H2 콘솔 접근 경로
+      settings:
+        web-allow-others: true                         # 외부 접근 허용 (개발환경만)
         
+  # ------------------------------------------------------------------------------
   # SQL 초기화 설정
+  # ------------------------------------------------------------------------------
   sql:
     init:
-      mode: always
-      schema-locations: classpath:schema.sql
+      mode: always                                     # SQL 스크립트 실행 모드 (always, embedded, never)
+      schema-locations: classpath:schema.sql           # DDL 스크립트 위치
+      continue-on-error: false                         # 에러 발생 시 중단 여부
 
-# MyBatis 설정
+# ==============================================================================
+# MyBatis Configuration
+# ==============================================================================
 mybatis:
-  mapper-locations: classpath:mappers/**/*.xml
+  # XML 매퍼 파일 위치
+  mapper-locations: classpath:mappers/**/*.xml         # MyBatis XML 매퍼 경로 패턴
+  
+  # 타입 별칭 패키지 (DTO/Domain 클래스)
   type-aliases-package: com.rounders.pposeek.common.model
+  
+  # MyBatis 설정
   configuration:
-    map-underscore-to-camel-case: true
-    default-fetch-size: 100
-    default-statement-timeout: 30
+    map-underscore-to-camel-case: true                # snake_case → camelCase 자동 변환
+    default-fetch-size: 100                           # 기본 페치 크기
+    default-statement-timeout: 30                     # SQL 실행 타임아웃 (초)
+    lazy-loading-enabled: true                        # 지연 로딩 활성화
+    multiple-result-sets-enabled: true                # 다중 결과셋 지원
+    use-column-label: true                            # 컬럼 라벨 사용
+    use-generated-keys: true                          # 자동 생성 키 사용
+    auto-mapping-behavior: partial                    # 자동 매핑 동작 (none, partial, full)
     
+# ==============================================================================
+# Server Configuration
+# ==============================================================================
 server:
-  port: 8080
+  port: 8080                                          # 서버 포트
+  servlet:
+    context-path: /                                   # 컨텍스트 경로
+    encoding:
+      charset: UTF-8                                  # 문자 인코딩
+      enabled: true                                   # 인코딩 필터 활성화
+      force: true                                     # 강제 인코딩 적용
+  error:
+    include-message: always                           # 에러 메시지 포함
+    include-stacktrace: on_param                      # 스택 트레이스 포함 조건
 
-# JWT 설정
+# ==============================================================================
+# JWT Configuration
+# ==============================================================================
 jwt:
-  secret: mySecretKey
-  expiration: 86400000 # 24시간 (밀리초)
-
+  secret: pposeekSecretKey2025ForJwtTokenGeneration   # JWT 서명 키 (실제 운영에서는 환경변수 사용)
+  expiration: 86400000                                # JWT 만료 시간 (24시간, 밀리초)
+  refresh-expiration: 604800000                       # Refresh Token 만료 시간 (7일, 밀리초)
+  issuer: pposeek-api                                 # JWT 발급자
+  
+# ==============================================================================
+# Logging Configuration
+# ==============================================================================
 logging:
   level:
-    com.rounders.pposeek: DEBUG
+    # 루트 로그 레벨
+    root: INFO
+    
+    # 패키지별 로그 레벨
+    com.rounders.pposeek: DEBUG                       # 애플리케이션 로그 (개발시 DEBUG)
+    org.springframework.security: DEBUG               # Spring Security 로그
+    org.mybatis: DEBUG                                # MyBatis 로그
+    org.springframework.web: INFO                     # Spring Web 로그
+    org.apache.ibatis: DEBUG                          # iBatis/MyBatis 상세 로그
+    
+  # 로그 패턴 설정
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    
+  # 로그 파일 설정
+  file:
+    name: logs/pposeek.log                            # 로그 파일 경로 (상대 경로)
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB                             # 개별 로그 파일 최대 크기
+      max-history: 30                                 # 보관할 로그 파일 개수
+      total-size-cap: 100MB                           # 전체 로그 파일 최대 크기
+
+# ==============================================================================
+# Spring Doc (Swagger) Configuration
+# ==============================================================================
+springdoc:
+  api-docs:
+    path: /v3/api-docs                                # OpenAPI 3 문서 경로
+    enabled: true                                     # API 문서 활성화
+  swagger-ui:
+    path: /swagger-ui.html                            # Swagger UI 경로
+    enabled: true                                     # Swagger UI 활성화
+    operations-sorter: method                         # 작업 정렬 방식
+    tags-sorter: alpha                                # 태그 정렬 방식
+    display-request-duration: true                    # 요청 시간 표시
+    
+# ==============================================================================
+# Management & Actuator Configuration
+# ==============================================================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics                  # 노출할 엔드포인트
+  endpoint:
+    health:
+      show-details: always                            # 헬스 체크 상세 정보 표시
+      
+---
+# ==============================================================================
+# Development Profile Configuration
+# ==============================================================================
+spring:
+  config:
+    activate:
+      on-profile: dev                                 # 개발 프로파일
+      
+logging:
+  level:
+    com.rounders.pposeek: DEBUG                       # 개발환경 디버그 로그
     org.springframework.security: DEBUG
     org.mybatis: DEBUG
+
+---
+# ==============================================================================
+# Production Profile Configuration
+# ==============================================================================
+spring:
+  config:
+    activate:
+      on-profile: prod                                # 운영 프로파일
+      
+logging:
+  level:
+    com.rounders.pposeek: INFO                        # 운영환경 INFO 로그
+    org.springframework.security: WARN
+    org.mybatis: WARN
+    root: WARN

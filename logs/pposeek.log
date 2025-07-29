@@ -1,0 +1,43 @@
+2025-07-29 19:12:36.565 [main] INFO  c.r.pposeek.PposeekApplication - Starting PposeekApplication using Java 21.0.7 with PID 19668 (C:\dev\pposeek-web-spring\build\classes\java\main started by User in C:\dev\pposeek-web-spring)
+2025-07-29 19:12:36.567 [main] DEBUG c.r.pposeek.PposeekApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-29 19:12:36.568 [main] INFO  c.r.pposeek.PposeekApplication - The following 1 profile is active: "dev"
+2025-07-29 19:12:37.499 [main] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2025-07-29 19:12:37.503 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\dev\pposeek-web-spring\build\classes\java\main\com\rounders\pposeek\common\persistence\mapper\reader\auth\AuthReaderMapper.class]
+2025-07-29 19:12:37.503 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\dev\pposeek-web-spring\build\classes\java\main\com\rounders\pposeek\common\persistence\mapper\writer\auth\AuthWriterMapper.class]
+2025-07-29 19:12:37.503 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'authReaderMapper' and 'com.rounders.pposeek.common.persistence.mapper.reader.auth.AuthReaderMapper' mapperInterface
+2025-07-29 19:12:37.508 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'authReaderMapper'.
+2025-07-29 19:12:37.508 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'authWriterMapper' and 'com.rounders.pposeek.common.persistence.mapper.writer.auth.AuthWriterMapper' mapperInterface
+2025-07-29 19:12:37.508 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'authWriterMapper'.
+2025-07-29 19:12:38.078 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-29 19:12:38.101 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-29 19:12:38.101 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-29 19:12:38.290 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-29 19:12:38.290 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1675 ms
+2025-07-29 19:12:39.647 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\dev\pposeek-web-spring\build\resources\main\mappers\reader\auth\AuthReaderMapper.xml]'
+2025-07-29 19:12:39.664 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\dev\pposeek-web-spring\build\resources\main\mappers\writer\auth\AuthWriterMapper.xml]'
+2025-07-29 19:12:39.679 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-29 19:12:39.903 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-07-29 19:12:39.907 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-29 19:12:40.527 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-07-29 19:12:40.637 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-07-29 19:12:40.876 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-07-29 19:12:40.953 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-07-29 19:12:40.955 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-29 19:12:40.958 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-07-29 19:12:40.969 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-29 19:12:40.987 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
