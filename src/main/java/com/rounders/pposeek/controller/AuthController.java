@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
+// 싱크 커밋
 public class AuthController {
     
     private final AuthService authService;
